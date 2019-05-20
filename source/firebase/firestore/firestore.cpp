@@ -242,9 +242,6 @@ void Firestore::ListenerThread::ListenInternal() const
 
 	// Listening loop
 	std::list<uint32_t> active_target_ids;
-#ifdef CLEAN_UP_TARGETS
-	bool first_add = false;
-#endif
 	do
 	{
 		// Get server response
@@ -307,9 +304,6 @@ void Firestore::ListenerThread::ListenInternal() const
 					// TODO: Should add checks to remember all currently valid targets
 					case google::firestore::v1::TargetChange::ADD:
 						verbose << "Firestore::Listen(): Received a target change response of type ADD" << std::endl;
-#ifdef CLEAN_UP_TARGETS
-						first_add = true;
-#endif
 						for(int32_t id : change.target_ids())
 						{
 							active_target_ids.push_back(id);
@@ -414,66 +408,10 @@ void Firestore::ListenerThread::ListenInternal() const
 				std::cerr << "Firestore::Listen(): ResponseTypeCase " << response_type_case << " not implemented." << std::endl;
 				break;
 		}
-
-		if(!listening)
-		{
-#ifdef CLEAN_UP_TARGETS
-			for(int32_t id : active_target_ids)
-			{
-				// Remove all target ids
-				google::firestore::v1::ListenRequest request;
-				request.set_database(firestore.database_base_path);
-				request.set_remove_target(id);
-
-				// Write the listen request
-				// This will make the server listen for changes
-				// in the documents that were added to the target
-				rpc->Write(request, tag);
-				if(!cq.Next(&recv_tag, &ok))
-				{
-					std::cout << "Firestore::Listen(): Queue was shut down. Timeout? (Last call: Write)" << std::endl;
-					return;
-				}
-				if(!ok || recv_tag != tag)
-				{
-					std::cout <<
-						"Firestore::Listen(): Failed to write to stream. " <<
-						"cq.Next returned tag=" << recv_tag << " " <<
-						"(expected tag=" << tag << ") " <<
-						"and ok=" << ok << std::endl;
-					return;
-				}
-			}
-#else
-			break;
-#endif
-		}
-
-#ifdef CLEAN_UP_TARGETS
-	} while(!first_add || active_target_ids.size() > 0);
-#else
 	} while(listening);
-#endif
 
 	grpc::Status s;
 	rpc->Finish(&s, tag);
-#ifdef CLEAN_UP_TARGETS
-	if(!cq.Next(&recv_tag, &ok)) // TODO: Should this be here? It's freezing. But maybe targets have to be manually removed first?
-	{
-		std::cout << "Firestore::Listen(): Queue was shut down. Timeout? (Last call: Finish)" << std::endl;
-		return;
-	}
-	if(!ok || recv_tag != tag)
-	{
-		std::cout <<
-			"Firestore::Listen(): Failed to finish stream. " <<
-			"cq.Next returned tag=" << recv_tag << " " <<
-			"(expected tag=" << tag << ") " <<
-			"and ok=" << ok << std::endl;
-		return;
-	}
-#endif
-
 	if(!s.ok())
 	{
 		std::cout << "Firestore::Listen(): Received ok=false on finish" << std::endl;

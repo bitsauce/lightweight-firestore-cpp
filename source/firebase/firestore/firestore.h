@@ -1,5 +1,5 @@
-#ifndef FIRESTORE_API_SRC_FIREBASE_FIRESTORE_FIRESTORE_H_
-#define FIRESTORE_API_SRC_FIREBASE_FIRESTORE_FIRESTORE_H_
+#ifndef FIRESTORE_SRC_FIREBASE_FIRESTORE_FIRESTORE_H
+#define FIRESTORE_SRC_FIREBASE_FIRESTORE_FIRESTORE_H
 
 #include <grpcpp/grpcpp.h>
 #include "google/firestore/v1/firestore.grpc.pb.h"
@@ -149,4 +149,4 @@ private:
 } // namespace firestore
 } // namespace firebase
 
-#endif // FIRESTORE_API_SRC_FIREBASE_FIRESTORE_FIRESTORE_H_
+#endif // FIRESTORE_SRC_FIREBASE_FIRESTORE_FIRESTORE_H
