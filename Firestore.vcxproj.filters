@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\firebase\firestore\firestore.cpp">
+      <Filter>source\firebase\firestore</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\mutation.grpc.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\mutation.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\target.grpc.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\target.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\maybe_document.grpc.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\firestore\local\maybe_document.pb.cc">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\api\annotations.pb.cc">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\api\http.grpc.pb.cc">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\api\http.pb.cc">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\api\annotations.grpc.pb.cc">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\document.grpc.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\document.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\firestore.grpc.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\firestore.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\query.grpc.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\query.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\write.grpc.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\write.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\common.grpc.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\firestore\v1\common.pb.cc">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\empty.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\struct.grpc.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\struct.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\timestamp.grpc.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\timestamp.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\wrappers.grpc.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\wrappers.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\any.grpc.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\any.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\protobuf\empty.grpc.pb.cc">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\rpc\status.pb.cc">
+      <Filter>protos\cpp\google\rpc</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\rpc\status.grpc.pb.cc">
+      <Filter>protos\cpp\google\rpc</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\type\latlng.grpc.pb.cc">
+      <Filter>protos\cpp\google\type</Filter>
+    </ClCompile>
+    <ClCompile Include="protos\cpp\google\type\latlng.pb.cc">
+      <Filter>protos\cpp\google\type</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{0668030c-c1b7-4828-8bae-9699648f7a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\firebase">
+      <UniqueIdentifier>{07bae8c8-5042-457e-b799-116076bf8c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\firebase\firestore">
+      <UniqueIdentifier>{2b60bf45-1c77-4426-9419-07fc8d98063d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos">
+      <UniqueIdentifier>{1cfa3e11-ea58-45ca-b5b5-727a8db4a3a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp">
+      <UniqueIdentifier>{3b3a64f3-637d-4b70-b64a-4977a1b40628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\firestore">
+      <UniqueIdentifier>{9386e6b1-1228-4428-b8c7-ba2a4c6a21fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\firestore\local">
+      <UniqueIdentifier>{409c6033-b7fd-4a83-a6d6-1dd5fa72cce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google">
+      <UniqueIdentifier>{e2cb3363-671b-40f5-af97-8e06cc728608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\api">
+      <UniqueIdentifier>{29d5bbdb-f0f6-4a2b-8e0c-2dbbcb3dade1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\firestore">
+      <UniqueIdentifier>{5b07986a-0ab0-424a-95d3-af8c42b01408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\protobuf">
+      <UniqueIdentifier>{d3a62479-c256-4dab-96c9-b24907223d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\rpc">
+      <UniqueIdentifier>{bb3e9510-0803-4834-9254-04c9b1de79b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\type">
+      <UniqueIdentifier>{eb4495cd-c30d-4804-a06c-7e06447b1a01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protos\cpp\google\firestore\v1">
+      <UniqueIdentifier>{be804afe-dad9-4133-be37-37a689acc738}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\firebase\firestore\firestore.h">
+      <Filter>source\firebase\firestore</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\maybe_document.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\mutation.grpc.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\mutation.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\target.grpc.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\target.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\firestore\local\maybe_document.grpc.pb.h">
+      <Filter>protos\cpp\firestore\local</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\api\annotations.pb.h">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\api\http.grpc.pb.h">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\api\http.pb.h">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\api\annotations.grpc.pb.h">
+      <Filter>protos\cpp\google\api</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\common.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\document.grpc.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\document.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\firestore.grpc.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\firestore.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\query.grpc.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\query.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\write.grpc.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\write.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\firestore\v1\common.grpc.pb.h">
+      <Filter>protos\cpp\google\firestore\v1</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\empty.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\struct.grpc.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\struct.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\timestamp.grpc.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\timestamp.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\wrappers.grpc.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\wrappers.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\any.grpc.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\any.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\protobuf\empty.grpc.pb.h">
+      <Filter>protos\cpp\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\rpc\status.pb.h">
+      <Filter>protos\cpp\google\rpc</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\rpc\status.grpc.pb.h">
+      <Filter>protos\cpp\google\rpc</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\type\latlng.pb.h">
+      <Filter>protos\cpp\google\type</Filter>
+    </ClInclude>
+    <ClInclude Include="protos\cpp\google\type\latlng.grpc.pb.h">
+      <Filter>protos\cpp\google\type</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
