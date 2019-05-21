@@ -31,7 +31,7 @@ Then, add the following environment variables:
 - VCPKG_ROOT=Root folder containing vcpkg.exe
 - GOOGLE_APPLICATION_CREDENTIALS=[PATH_TO_CREDENTIALS]
     - See https://cloud.google.com/docs/authentication/getting-started for more information
-- GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[VCPCK_ROOT]\installed\x64-windows-v140\share\grpc
+- GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[VCPCK_ROOT]\installed\x64-windows-v140\share\grpc\roots.pem
 
 Now Firestore should compile, and you should be able to run the Tests project.
 
