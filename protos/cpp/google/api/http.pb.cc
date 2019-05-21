@@ -67,7 +67,7 @@ static void InitDefaultsHttp_google_2fapi_2fhttp_2eproto() {
   ::google::api::Http::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Http_google_2fapi_2fhttp_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_Http_google_2fapi_2fhttp_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsHttp_google_2fapi_2fhttp_2eproto}, {
       &scc_info_HttpRule_google_2fapi_2fhttp_2eproto.base,}};
 
@@ -82,7 +82,7 @@ static void InitDefaultsHttpRule_google_2fapi_2fhttp_2eproto() {
   ::google::api::HttpRule::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_HttpRule_google_2fapi_2fhttp_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_HttpRule_google_2fapi_2fhttp_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsHttpRule_google_2fapi_2fhttp_2eproto}, {
       &scc_info_CustomHttpPattern_google_2fapi_2fhttp_2eproto.base,}};
 
@@ -97,7 +97,7 @@ static void InitDefaultsCustomHttpPattern_google_2fapi_2fhttp_2eproto() {
   ::google::api::CustomHttpPattern::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_CustomHttpPattern_google_2fapi_2fhttp_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_CustomHttpPattern_google_2fapi_2fhttp_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCustomHttpPattern_google_2fapi_2fhttp_2eproto}, {}};
 
 void InitDefaults_google_2fapi_2fhttp_2eproto() {

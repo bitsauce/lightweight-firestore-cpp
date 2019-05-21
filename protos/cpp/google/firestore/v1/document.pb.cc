@@ -87,7 +87,7 @@ static void InitDefaultsDocument_FieldsEntry_DoNotUse_google_2ffirestore_2fv1_2f
   ::google::firestore::v1::Document_FieldsEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Document_FieldsEntry_DoNotUse_google_2ffirestore_2fv1_2fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_Document_FieldsEntry_DoNotUse_google_2ffirestore_2fv1_2fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocument_FieldsEntry_DoNotUse_google_2ffirestore_2fv1_2fdocument_2eproto}, {
       &scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
 
@@ -102,7 +102,7 @@ static void InitDefaultsDocument_google_2ffirestore_2fv1_2fdocument_2eproto() {
   ::google::firestore::v1::Document::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDocument_google_2ffirestore_2fv1_2fdocument_2eproto}, {
       &scc_info_Document_FieldsEntry_DoNotUse_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -135,7 +135,7 @@ static void InitDefaultsArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto() 
   ::google::firestore::v1::MapValue::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_LatLng_google_2ftype_2flatlng_2eproto.base,}};

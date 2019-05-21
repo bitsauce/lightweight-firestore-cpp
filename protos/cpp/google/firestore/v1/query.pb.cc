@@ -103,7 +103,7 @@ static void InitDefaultsStructuredQuery_CollectionSelector_google_2ffirestore_2f
   ::google::firestore::v1::StructuredQuery_CollectionSelector::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_StructuredQuery_CollectionSelector_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_StructuredQuery_CollectionSelector_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStructuredQuery_CollectionSelector_google_2ffirestore_2fv1_2fquery_2eproto}, {}};
 
 static void InitDefaultsStructuredQuery_CompositeFilter_google_2ffirestore_2fv1_2fquery_2eproto() {
@@ -123,7 +123,7 @@ static void InitDefaultsStructuredQuery_CompositeFilter_google_2ffirestore_2fv1_
   ::google::firestore::v1::StructuredQuery_CompositeFilter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_StructuredQuery_CompositeFilter_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_StructuredQuery_CompositeFilter_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsStructuredQuery_CompositeFilter_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_FieldFilter_google_2ffirestore_2fv1_2fquery_2eproto.base,
       &scc_info_StructuredQuery_UnaryFilter_google_2ffirestore_2fv1_2fquery_2eproto.base,}};
@@ -139,7 +139,7 @@ static void InitDefaultsStructuredQuery_FieldFilter_google_2ffirestore_2fv1_2fqu
   ::google::firestore::v1::StructuredQuery_FieldFilter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_StructuredQuery_FieldFilter_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_StructuredQuery_FieldFilter_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsStructuredQuery_FieldFilter_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto.base,
       &scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
@@ -155,7 +155,7 @@ static void InitDefaultsStructuredQuery_UnaryFilter_google_2ffirestore_2fv1_2fqu
   ::google::firestore::v1::StructuredQuery_UnaryFilter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_UnaryFilter_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_UnaryFilter_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStructuredQuery_UnaryFilter_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto.base,}};
 
@@ -170,7 +170,7 @@ static void InitDefaultsStructuredQuery_Order_google_2ffirestore_2fv1_2fquery_2e
   ::google::firestore::v1::StructuredQuery_Order::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_Order_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_Order_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStructuredQuery_Order_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto.base,}};
 
@@ -185,7 +185,7 @@ static void InitDefaultsStructuredQuery_FieldReference_google_2ffirestore_2fv1_2
   ::google::firestore::v1::StructuredQuery_FieldReference::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto}, {}};
 
 static void InitDefaultsStructuredQuery_Projection_google_2ffirestore_2fv1_2fquery_2eproto() {
@@ -199,7 +199,7 @@ static void InitDefaultsStructuredQuery_Projection_google_2ffirestore_2fv1_2fque
   ::google::firestore::v1::StructuredQuery_Projection::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_Projection_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_StructuredQuery_Projection_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStructuredQuery_Projection_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_FieldReference_google_2ffirestore_2fv1_2fquery_2eproto.base,}};
 
@@ -214,7 +214,7 @@ static void InitDefaultsStructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto(
   ::google::firestore::v1::StructuredQuery::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<6> scc_info_StructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<6> scc_info_StructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 6, InitDefaultsStructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_StructuredQuery_Projection_google_2ffirestore_2fv1_2fquery_2eproto.base,
       &scc_info_StructuredQuery_CollectionSelector_google_2ffirestore_2fv1_2fquery_2eproto.base,
@@ -234,7 +234,7 @@ static void InitDefaultsCursor_google_2ffirestore_2fv1_2fquery_2eproto() {
   ::google::firestore::v1::Cursor::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Cursor_google_2ffirestore_2fv1_2fquery_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_Cursor_google_2ffirestore_2fv1_2fquery_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCursor_google_2ffirestore_2fv1_2fquery_2eproto}, {
       &scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
 

@@ -79,7 +79,7 @@ namespace v1 {
 // *    `commit_time` - The time at which the writes in a transaction were
 //      committed. Any read with an equal or greater `read_time` is guaranteed
 //      to see the effects of the transaction.
-class Firestore final {
+class FIRESTORE_EXPORT Firestore final { // BITSAUCE: Manually added FIRESTORE_EXPORT
  public:
   static constexpr char const* service_full_name() {
     return "google.firestore.v1.Firestore";
@@ -268,7 +268,7 @@ class Firestore final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::firestore::v1::ListCollectionIdsResponse>* AsyncListCollectionIdsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::firestore::v1::ListCollectionIdsResponse>* PrepareAsyncListCollectionIdsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
-  class Stub final : public StubInterface {
+  class FIRESTORE_EXPORT Stub final : public StubInterface { // BITSAUCE: Manually added FIRESTORE_EXPORT
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest& request, ::google::firestore::v1::Document* response) override;

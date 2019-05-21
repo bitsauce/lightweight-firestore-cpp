@@ -31,16 +31,6 @@
     <ClCompile Include="protos\cpp\google\firestore\v1\query.pb.cc" />
     <ClCompile Include="protos\cpp\google\firestore\v1\write.grpc.pb.cc" />
     <ClCompile Include="protos\cpp\google\firestore\v1\write.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\any.grpc.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\any.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\empty.grpc.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\empty.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\struct.grpc.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\struct.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\timestamp.grpc.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\timestamp.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\wrappers.grpc.pb.cc" />
-    <ClCompile Include="protos\cpp\google\protobuf\wrappers.pb.cc" />
     <ClCompile Include="protos\cpp\google\rpc\status.grpc.pb.cc" />
     <ClCompile Include="protos\cpp\google\rpc\status.pb.cc" />
     <ClCompile Include="protos\cpp\google\type\latlng.grpc.pb.cc" />
@@ -68,16 +58,6 @@
     <ClInclude Include="protos\cpp\google\firestore\v1\query.pb.h" />
     <ClInclude Include="protos\cpp\google\firestore\v1\write.grpc.pb.h" />
     <ClInclude Include="protos\cpp\google\firestore\v1\write.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\any.grpc.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\any.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\empty.grpc.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\empty.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\struct.grpc.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\struct.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\timestamp.grpc.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\timestamp.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\wrappers.grpc.pb.h" />
-    <ClInclude Include="protos\cpp\google\protobuf\wrappers.pb.h" />
     <ClInclude Include="protos\cpp\google\rpc\status.grpc.pb.h" />
     <ClInclude Include="protos\cpp\google\rpc\status.pb.h" />
     <ClInclude Include="protos\cpp\google\type\latlng.grpc.pb.h" />
@@ -89,16 +69,17 @@
     <ProjectGuid>{901E102B-4244-4FDC-A0D7-AABBC86E2C81}</ProjectGuid>
     <RootNamespace>Firestore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <VcpkgTriplet>x64-windows-v140</VcpkgTriplet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -123,18 +104,20 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)source\;$(SolutionDir)protos\cpp\;$(SolutionDir)grpc\include\;$(SolutionDir)grpc\third_party\protobuf\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PB_ENABLE_MALLOC;NOMINMAX;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\;$(SolutionDir)protos\cpp\;$(VCPKG_ROOT)\installed\$(VcpkgTriplet)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FIRESTORE_EXPORT=__declspec(dllexport);FIRESTORE_VERBOSE;PB_ENABLE_MALLOC;NOMINMAX;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
-      <AdditionalDependencies>$(SolutionDir)grpc\vsprojects\third_party\zlib\$(Configuration)\zlibd.lib;$(SolutionDir)grpc\vsprojects\third_party\cares\cares\lib\$(Configuration)\cares.lib;$(SolutionDir)grpc\vsprojects\third_party\protobuf\$(Configuration)\libprotobufd.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\ssl\$(Configuration)\ssl.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\crypto\$(Configuration)\crypto.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\gpr.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc++.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\address_sorting.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
     <Link>
-      <AdditionalDependencies>$(SolutionDir)grpc\vsprojects\third_party\zlib\$(Configuration)\zlibd.lib;$(SolutionDir)grpc\vsprojects\third_party\cares\cares\lib\$(Configuration)\cares.lib;$(SolutionDir)grpc\vsprojects\third_party\protobuf\$(Configuration)\libprotobufd.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\ssl\$(Configuration)\ssl.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\crypto\$(Configuration)\crypto.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\gpr.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc++.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\address_sorting.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlibd.lib;cares.lib;libprotobufd.lib;libeay32.lib;ssleay32.lib;grpc.lib;gpr.lib;grpc++.lib;address_sorting.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VCPKG_ROOT)\installed\$(VcpkgTriplet)\debug\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,16 +128,18 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)source\;$(SolutionDir)protos\cpp\;$(SolutionDir)grpc\include\;$(SolutionDir)grpc\third_party\protobuf\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PB_ENABLE_MALLOC;NOMINMAX;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\;$(SolutionDir)protos\cpp\;$(VCPKG_ROOT)\installed\$(VcpkgTriplet)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FIRESTORE_EXPORT=__declspec(dllexport);FIRESTORE_VERBOSE;PB_ENABLE_MALLOC;NOMINMAX;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)grpc\vsprojects\third_party\zlib\$(Configuration)\zlib.lib;$(SolutionDir)grpc\vsprojects\third_party\cares\cares\lib\$(Configuration)\cares.lib;$(SolutionDir)grpc\vsprojects\third_party\protobuf\$(Configuration)\libprotobuf.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\ssl\$(Configuration)\ssl.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\crypto\$(Configuration)\crypto.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\gpr.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc++.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\address_sorting.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlib.lib;cares.lib;libprotobuf.lib;libeay32.lib;ssleay32.lib;grpc.lib;gpr.lib;grpc++.lib;address_sorting.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VCPKG_ROOT)\installed\$(VcpkgTriplet)\lib</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalDependencies>$(SolutionDir)grpc\vsprojects\third_party\zlib\$(Configuration)\zlib.lib;$(SolutionDir)grpc\vsprojects\third_party\cares\cares\lib\$(Configuration)\cares.lib;$(SolutionDir)grpc\vsprojects\third_party\protobuf\$(Configuration)\libprotobuf.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\ssl\$(Configuration)\ssl.lib;$(SolutionDir)grpc\vsprojects\third_party\boringssl\crypto\$(Configuration)\crypto.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\gpr.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\grpc++.lib;$(SolutionDir)grpc\vsprojects\$(Configuration)\address_sorting.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>

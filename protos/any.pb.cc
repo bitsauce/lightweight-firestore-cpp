@@ -51,7 +51,7 @@ static void InitDefaultsAny_google_2fprotobuf_2fany_2eproto() {
   ::google::protobuf::Any::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Any_google_2fprotobuf_2fany_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_Any_google_2fprotobuf_2fany_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAny_google_2fprotobuf_2fany_2eproto}, {}};
 
 void InitDefaults_google_2fprotobuf_2fany_2eproto() {
@@ -129,15 +129,15 @@ bool Any::UnpackTo(::google::protobuf::Message* message) const {
 }
 bool Any::ParseAnyTypeUrl(const string& type_url,
                                   string* full_type_name) {
-  return ::google::protobuf::internal::ParseAnyTypeUrl(type_url,
-                                             full_type_name);
+  return ::google::protobuf::Any::ParseAnyTypeUrl(type_url,   // BITSAUCE: Symbol not exported correctly to libprotobuf.lib,
+                                             full_type_name); // Changed google::protobuf::internal to google::protobuf::Any
 }
 bool Any::GetAnyFieldDescriptors(
     const ::google::protobuf::Message& message,
     const ::google::protobuf::FieldDescriptor** type_url_field,
     const ::google::protobuf::FieldDescriptor** value_field) {
-  return ::google::protobuf::internal::GetAnyFieldDescriptors(
-      message, type_url_field, value_field);
+  return ::google::protobuf::Any::GetAnyFieldDescriptors( // BITSAUCE: Symbol not exported correctly to libprotobuf.lib,
+      message, type_url_field, value_field);              // Changed google::protobuf::internal to google::protobuf::Any
 }
 
 class Any::HasBitSetters {

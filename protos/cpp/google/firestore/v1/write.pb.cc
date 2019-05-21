@@ -97,7 +97,7 @@ static void InitDefaultsWrite_google_2ffirestore_2fv1_2fwrite_2eproto() {
   ::google::firestore::v1::Write::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_Write_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<4> scc_info_Write_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsWrite_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_DocumentTransform_google_2ffirestore_2fv1_2fwrite_2eproto.base,
@@ -115,7 +115,7 @@ static void InitDefaultsDocumentTransform_FieldTransform_google_2ffirestore_2fv1
   ::google::firestore::v1::DocumentTransform_FieldTransform::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DocumentTransform_FieldTransform_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DocumentTransform_FieldTransform_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocumentTransform_FieldTransform_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
 
@@ -130,7 +130,7 @@ static void InitDefaultsDocumentTransform_google_2ffirestore_2fv1_2fwrite_2eprot
   ::google::firestore::v1::DocumentTransform::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DocumentTransform_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DocumentTransform_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocumentTransform_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_DocumentTransform_FieldTransform_google_2ffirestore_2fv1_2fwrite_2eproto.base,}};
 
@@ -145,7 +145,7 @@ static void InitDefaultsWriteResult_google_2ffirestore_2fv1_2fwrite_2eproto() {
   ::google::firestore::v1::WriteResult::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_WriteResult_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_WriteResult_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWriteResult_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_ArrayValue_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
@@ -161,7 +161,7 @@ static void InitDefaultsDocumentChange_google_2ffirestore_2fv1_2fwrite_2eproto()
   ::google::firestore::v1::DocumentChange::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DocumentChange_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DocumentChange_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocumentChange_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
 
@@ -176,7 +176,7 @@ static void InitDefaultsDocumentDelete_google_2ffirestore_2fv1_2fwrite_2eproto()
   ::google::firestore::v1::DocumentDelete::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DocumentDelete_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DocumentDelete_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocumentDelete_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
@@ -191,7 +191,7 @@ static void InitDefaultsDocumentRemove_google_2ffirestore_2fv1_2fwrite_2eproto()
   ::google::firestore::v1::DocumentRemove::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DocumentRemove_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DocumentRemove_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDocumentRemove_google_2ffirestore_2fv1_2fwrite_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
@@ -206,7 +206,7 @@ static void InitDefaultsExistenceFilter_google_2ffirestore_2fv1_2fwrite_2eproto(
   ::google::firestore::v1::ExistenceFilter::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ExistenceFilter_google_2ffirestore_2fv1_2fwrite_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_ExistenceFilter_google_2ffirestore_2fv1_2fwrite_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsExistenceFilter_google_2ffirestore_2fv1_2fwrite_2eproto}, {}};
 
 void InitDefaults_google_2ffirestore_2fv1_2fwrite_2eproto() {

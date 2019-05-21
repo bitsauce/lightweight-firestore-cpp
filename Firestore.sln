@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Firestore", "Firestore.vcxproj", "{901E102B-4244-4FDC-A0D7-AABBC86E2C81}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests\Tests.vcxproj", "{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}"
+	ProjectSection(ProjectDependencies) = postProject
+		{901E102B-4244-4FDC-A0D7-AABBC86E2C81} = {901E102B-4244-4FDC-A0D7-AABBC86E2C81}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

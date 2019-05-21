@@ -66,7 +66,7 @@ static void InitDefaultsNoDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto(
   ::firestore::client::NoDocument::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_NoDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_NoDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsNoDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
@@ -81,7 +81,7 @@ static void InitDefaultsUnknownDocument_firestore_2flocal_2fmaybe_5fdocument_2ep
   ::firestore::client::UnknownDocument::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_UnknownDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_UnknownDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsUnknownDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
@@ -96,7 +96,7 @@ static void InitDefaultsMaybeDocument_firestore_2flocal_2fmaybe_5fdocument_2epro
   ::firestore::client::MaybeDocument::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_MaybeDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_MaybeDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsMaybeDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto}, {
       &scc_info_NoDocument_firestore_2flocal_2fmaybe_5fdocument_2eproto.base,
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,

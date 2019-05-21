@@ -201,7 +201,7 @@ static void InitDefaultsGetDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2
   ::google::firestore::v1::GetDocumentRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_GetDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_GetDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsGetDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_DocumentMask_google_2ffirestore_2fv1_2fcommon_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -217,7 +217,7 @@ static void InitDefaultsListDocumentsRequest_google_2ffirestore_2fv1_2ffirestore
   ::google::firestore::v1::ListDocumentsRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_ListDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_ListDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsListDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_DocumentMask_google_2ffirestore_2fv1_2fcommon_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -233,7 +233,7 @@ static void InitDefaultsListDocumentsResponse_google_2ffirestore_2fv1_2ffirestor
   ::google::firestore::v1::ListDocumentsResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_ListDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_ListDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,}};
 
@@ -248,7 +248,7 @@ static void InitDefaultsCreateDocumentRequest_google_2ffirestore_2fv1_2ffirestor
   ::google::firestore::v1::CreateDocumentRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_CreateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_CreateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsCreateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_DocumentMask_google_2ffirestore_2fv1_2fcommon_2eproto.base,}};
@@ -264,7 +264,7 @@ static void InitDefaultsUpdateDocumentRequest_google_2ffirestore_2fv1_2ffirestor
   ::google::firestore::v1::UpdateDocumentRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_UpdateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_UpdateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsUpdateDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_DocumentMask_google_2ffirestore_2fv1_2fcommon_2eproto.base,
@@ -281,7 +281,7 @@ static void InitDefaultsDeleteDocumentRequest_google_2ffirestore_2fv1_2ffirestor
   ::google::firestore::v1::DeleteDocumentRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_DeleteDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_DeleteDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDeleteDocumentRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Precondition_google_2ffirestore_2fv1_2fcommon_2eproto.base,}};
 
@@ -296,7 +296,7 @@ static void InitDefaultsBatchGetDocumentsRequest_google_2ffirestore_2fv1_2ffires
   ::google::firestore::v1::BatchGetDocumentsRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_BatchGetDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_BatchGetDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsBatchGetDocumentsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_DocumentMask_google_2ffirestore_2fv1_2fcommon_2eproto.base,
       &scc_info_TransactionOptions_google_2ffirestore_2fv1_2fcommon_2eproto.base,
@@ -313,7 +313,7 @@ static void InitDefaultsBatchGetDocumentsResponse_google_2ffirestore_2fv1_2ffire
   ::google::firestore::v1::BatchGetDocumentsResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_BatchGetDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_BatchGetDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsBatchGetDocumentsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -329,7 +329,7 @@ static void InitDefaultsBeginTransactionRequest_google_2ffirestore_2fv1_2ffirest
   ::google::firestore::v1::BeginTransactionRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_BeginTransactionRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_BeginTransactionRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsBeginTransactionRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_TransactionOptions_google_2ffirestore_2fv1_2fcommon_2eproto.base,}};
 
@@ -344,7 +344,7 @@ static void InitDefaultsBeginTransactionResponse_google_2ffirestore_2fv1_2ffires
   ::google::firestore::v1::BeginTransactionResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_BeginTransactionResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_BeginTransactionResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBeginTransactionResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsCommitRequest_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -358,7 +358,7 @@ static void InitDefaultsCommitRequest_google_2ffirestore_2fv1_2ffirestore_2eprot
   ::google::firestore::v1::CommitRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_CommitRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_CommitRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCommitRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Write_google_2ffirestore_2fv1_2fwrite_2eproto.base,}};
 
@@ -373,7 +373,7 @@ static void InitDefaultsCommitResponse_google_2ffirestore_2fv1_2ffirestore_2epro
   ::google::firestore::v1::CommitResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_CommitResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_CommitResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsCommitResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_WriteResult_google_2ffirestore_2fv1_2fwrite_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -389,7 +389,7 @@ static void InitDefaultsRollbackRequest_google_2ffirestore_2fv1_2ffirestore_2epr
   ::google::firestore::v1::RollbackRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_RollbackRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_RollbackRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRollbackRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsRunQueryRequest_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -403,7 +403,7 @@ static void InitDefaultsRunQueryRequest_google_2ffirestore_2fv1_2ffirestore_2epr
   ::google::firestore::v1::RunQueryRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_RunQueryRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_RunQueryRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsRunQueryRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_StructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto.base,
       &scc_info_TransactionOptions_google_2ffirestore_2fv1_2fcommon_2eproto.base,
@@ -420,7 +420,7 @@ static void InitDefaultsRunQueryResponse_google_2ffirestore_2fv1_2ffirestore_2ep
   ::google::firestore::v1::RunQueryResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_RunQueryResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_RunQueryResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsRunQueryResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Document_google_2ffirestore_2fv1_2fdocument_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -435,7 +435,7 @@ static void InitDefaultsWriteRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv
   ::google::firestore::v1::WriteRequest_LabelsEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_WriteRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_WriteRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWriteRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsWriteRequest_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -449,7 +449,7 @@ static void InitDefaultsWriteRequest_google_2ffirestore_2fv1_2ffirestore_2eproto
   ::google::firestore::v1::WriteRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_WriteRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_WriteRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWriteRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Write_google_2ffirestore_2fv1_2fwrite_2eproto.base,
       &scc_info_WriteRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto.base,}};
@@ -465,7 +465,7 @@ static void InitDefaultsWriteResponse_google_2ffirestore_2fv1_2ffirestore_2eprot
   ::google::firestore::v1::WriteResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_WriteResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_WriteResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWriteResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_WriteResult_google_2ffirestore_2fv1_2fwrite_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -480,7 +480,7 @@ static void InitDefaultsListenRequest_LabelsEntry_DoNotUse_google_2ffirestore_2f
   ::google::firestore::v1::ListenRequest_LabelsEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ListenRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_ListenRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsListenRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsListenRequest_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -494,7 +494,7 @@ static void InitDefaultsListenRequest_google_2ffirestore_2fv1_2ffirestore_2eprot
   ::google::firestore::v1::ListenRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_ListenRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_ListenRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsListenRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Target_google_2ffirestore_2fv1_2ffirestore_2eproto.base,
       &scc_info_ListenRequest_LabelsEntry_DoNotUse_google_2ffirestore_2fv1_2ffirestore_2eproto.base,}};
@@ -510,7 +510,7 @@ static void InitDefaultsListenResponse_google_2ffirestore_2fv1_2ffirestore_2epro
   ::google::firestore::v1::ListenResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<5> scc_info_ListenResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<5> scc_info_ListenResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsListenResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_TargetChange_google_2ffirestore_2fv1_2ffirestore_2eproto.base,
       &scc_info_DocumentChange_google_2ffirestore_2fv1_2fwrite_2eproto.base,
@@ -529,7 +529,7 @@ static void InitDefaultsTarget_DocumentsTarget_google_2ffirestore_2fv1_2ffiresto
   ::google::firestore::v1::Target_DocumentsTarget::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Target_DocumentsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_Target_DocumentsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTarget_DocumentsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsTarget_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -543,7 +543,7 @@ static void InitDefaultsTarget_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2
   ::google::firestore::v1::Target_QueryTarget::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Target_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_Target_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTarget_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_StructuredQuery_google_2ffirestore_2fv1_2fquery_2eproto.base,}};
 
@@ -558,7 +558,7 @@ static void InitDefaultsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto() {
   ::google::firestore::v1::Target::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Target_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_Target_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Target_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto.base,
       &scc_info_Target_DocumentsTarget_google_2ffirestore_2fv1_2ffirestore_2eproto.base,
@@ -575,7 +575,7 @@ static void InitDefaultsTargetChange_google_2ffirestore_2fv1_2ffirestore_2eproto
   ::google::firestore::v1::TargetChange::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_TargetChange_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_TargetChange_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsTargetChange_google_2ffirestore_2fv1_2ffirestore_2eproto}, {
       &scc_info_Status_google_2frpc_2fstatus_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
@@ -591,7 +591,7 @@ static void InitDefaultsListCollectionIdsRequest_google_2ffirestore_2fv1_2ffires
   ::google::firestore::v1::ListCollectionIdsRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ListCollectionIdsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_ListCollectionIdsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsListCollectionIdsRequest_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 static void InitDefaultsListCollectionIdsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto() {
@@ -605,7 +605,7 @@ static void InitDefaultsListCollectionIdsResponse_google_2ffirestore_2fv1_2ffire
   ::google::firestore::v1::ListCollectionIdsResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ListCollectionIdsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_ListCollectionIdsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsListCollectionIdsResponse_google_2ffirestore_2fv1_2ffirestore_2eproto}, {}};
 
 void InitDefaults_google_2ffirestore_2fv1_2ffirestore_2eproto() {

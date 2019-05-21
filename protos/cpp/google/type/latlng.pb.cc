@@ -51,7 +51,7 @@ static void InitDefaultsLatLng_google_2ftype_2flatlng_2eproto() {
   ::google::type::LatLng::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_LatLng_google_2ftype_2flatlng_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_LatLng_google_2ftype_2flatlng_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLatLng_google_2ftype_2flatlng_2eproto}, {}};
 
 void InitDefaults_google_2ftype_2flatlng_2eproto() {

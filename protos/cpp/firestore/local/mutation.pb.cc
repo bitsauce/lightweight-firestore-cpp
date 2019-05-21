@@ -57,7 +57,7 @@ static void InitDefaultsMutationQueue_firestore_2flocal_2fmutation_2eproto() {
   ::firestore::client::MutationQueue::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_MutationQueue_firestore_2flocal_2fmutation_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_MutationQueue_firestore_2flocal_2fmutation_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMutationQueue_firestore_2flocal_2fmutation_2eproto}, {}};
 
 static void InitDefaultsWriteBatch_firestore_2flocal_2fmutation_2eproto() {
@@ -71,7 +71,7 @@ static void InitDefaultsWriteBatch_firestore_2flocal_2fmutation_2eproto() {
   ::firestore::client::WriteBatch::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_WriteBatch_firestore_2flocal_2fmutation_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<2> scc_info_WriteBatch_firestore_2flocal_2fmutation_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWriteBatch_firestore_2flocal_2fmutation_2eproto}, {
       &scc_info_Write_google_2ffirestore_2fv1_2fwrite_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};

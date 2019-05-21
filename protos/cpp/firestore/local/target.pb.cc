@@ -60,7 +60,7 @@ static void InitDefaultsTarget_firestore_2flocal_2ftarget_2eproto() {
   ::firestore::client::Target::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Target_firestore_2flocal_2ftarget_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<3> scc_info_Target_firestore_2flocal_2ftarget_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTarget_firestore_2flocal_2ftarget_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_Target_QueryTarget_google_2ffirestore_2fv1_2ffirestore_2eproto.base,
@@ -77,7 +77,7 @@ static void InitDefaultsTargetGlobal_firestore_2flocal_2ftarget_2eproto() {
   ::firestore::client::TargetGlobal::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_TargetGlobal_firestore_2flocal_2ftarget_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_TargetGlobal_firestore_2flocal_2ftarget_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTargetGlobal_firestore_2flocal_2ftarget_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 

@@ -4,13 +4,18 @@
 #include <grpcpp/grpcpp.h>
 #include "google/firestore/v1/firestore.grpc.pb.h"
 
-#define FIRESTORE_VERBOSE
-
 #ifdef FIRESTORE_VERBOSE
 #include <iostream>
 #define verbose std::cout
 #else
-class log_disabled_output : public std::ostream {};
+class log_disabled_output : public std::ostream
+{
+public:
+	log_disabled_output() :
+		std::ostream(std::_Noinit, false)
+	{
+	}
+};
 static log_disabled_output log_disabled_output_instance;
 #define verbose log_disabled_output_instance 
 #endif
@@ -41,7 +46,7 @@ typedef google::firestore::v1::Value Value;
  * 2) GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[SOLUTION_DIR]\grpc\etc\roots.pem
  */
 
-class Firestore
+class FIRESTORE_EXPORT Firestore
 {
 public:
 	/**

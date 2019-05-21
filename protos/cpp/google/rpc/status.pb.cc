@@ -52,7 +52,7 @@ static void InitDefaultsStatus_google_2frpc_2fstatus_2eproto() {
   ::google::rpc::Status::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Status_google_2frpc_2fstatus_2eproto =
+FIRESTORE_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_Status_google_2frpc_2fstatus_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStatus_google_2frpc_2fstatus_2eproto}, {
       &scc_info_Any_google_2fprotobuf_2fany_2eproto.base,}};
 
