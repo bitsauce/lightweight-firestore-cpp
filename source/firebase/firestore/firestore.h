@@ -139,7 +139,7 @@ private:
 
 		std::thread thread;
 
-		bool listening;
+		std::atomic<bool> listening;
 	};
 	friend class ListenerThread;
 

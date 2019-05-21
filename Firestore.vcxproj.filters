@@ -106,7 +106,6 @@
     <ClCompile Include="protos\cpp\google\type\latlng.pb.cc">
       <Filter>protos\cpp\google\type</Filter>
     </ClCompile>
-    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="source">

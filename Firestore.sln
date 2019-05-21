@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Firestore", "Firestore.vcxproj", "{901E102B-4244-4FDC-A0D7-AABBC86E2C81}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests\Tests.vcxproj", "{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -19,6 +21,14 @@ Global
 		{901E102B-4244-4FDC-A0D7-AABBC86E2C81}.Release|x64.ActiveCfg = Release|x64
 		{901E102B-4244-4FDC-A0D7-AABBC86E2C81}.Release|x64.Build.0 = Release|x64
 		{901E102B-4244-4FDC-A0D7-AABBC86E2C81}.Release|x86.ActiveCfg = Release|x64
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Debug|x64.ActiveCfg = Debug|x64
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Debug|x64.Build.0 = Debug|x64
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Debug|x86.Build.0 = Debug|Win32
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Release|x64.ActiveCfg = Release|x64
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Release|x64.Build.0 = Release|x64
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Release|x86.ActiveCfg = Release|Win32
+		{F6BCA5FB-26BE-46D2-B645-584DF5B8E545}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
