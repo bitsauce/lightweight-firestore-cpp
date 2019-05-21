@@ -56,14 +56,12 @@ Then open the file and add the following line:
 
 ```
 set(VCPKG_PLATFORM_TOOLSET v140)
-
 ```
 
 Then run the followin command to install:
 
 ```
 .\vcpkg.exe install google-cloud-cpp:x64-windows-v140
-
 ```
 
 Then (for visual studio) open the .vcxproj file and find and add:
