@@ -1,4 +1,4 @@
-# Lightweight C++ Firestore
+# Lightweight Firestore C++
 
 This repository features a simple firestore class that uses gRPC for communication.
 
