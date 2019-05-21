@@ -33,9 +33,16 @@ Then, add the following environment variables:
     - See https://cloud.google.com/docs/authentication/getting-started for more information
 - GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[VCPCK_ROOT]\installed\x64-windows-v140\share\grpc\roots.pem
 
-Now Firestore should compile, and you the tests should run succesfully,
-provided you change the default `project_id` in `Tests/Main.cpp` to match the `project_id`
-of your Firestore database.
+Now Firestore and the Test project should compile.
+Note that in able to run the tests, you will need to copy the following .dlls from [VCPCK_ROOT]\installed\x64-windows-v140\bin:
+
+- cares.dll
+- libprotobuf.dll / libprotobufd.dll
+- zlib1.dll / zlibd1.dll
+
+And copy them into the same folder as the .exe (x64/Debug or x64/Release).
+
+Further more you will also have to change the default `project_id` in `Tests/Main.cpp` to match the `project_id` of your Firestore database.
 
 ### Custom VCPKG triplet for toolset v140
 
