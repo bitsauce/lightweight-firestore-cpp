@@ -34,7 +34,7 @@ Then, add the following environment variables:
 - GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[VCPCK_ROOT]\installed\x64-windows-v140\share\grpc\roots.pem
 
 Now Firestore and the Test project should compile.
-Note that in able to run the tests, you will need to copy the following .dlls from [VCPCK_ROOT]\installed\x64-windows-v140\bin:
+Note that in order to run the tests, you will need to copy the following .dlls from [VCPCK_ROOT]\installed\x64-windows-v140\bin:
 
 - cares.dll
 - libprotobuf.dll / libprotobufd.dll
