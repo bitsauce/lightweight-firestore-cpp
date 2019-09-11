@@ -8,6 +8,13 @@ Firestore::Firestore(const std::string &project_id, const std::string &database_
 	database_id(database_id),
 	database_base_path("projects/" + project_id + "/databases/" + database_id)
 {
+	do_grpc_shutdown = false;
+	if(!grpc_is_initialized())
+	{
+		grpc_init();
+		do_grpc_shutdown = true;
+	}
+
 	credentials = grpc::GoogleDefaultCredentials();
 	channel = grpc::CreateChannel("firestore.googleapis.com:443", credentials);
 	stub = google::firestore::v1::Firestore::NewStub(channel);
@@ -26,6 +33,11 @@ Firestore::~Firestore()
 		}
 	}
 	listener_threads.clear();
+
+	if(do_grpc_shutdown)
+	{
+		grpc_shutdown();
+	}
 }
 
 bool Firestore::GetDocument(const std::string &document_path, Document *document_out)

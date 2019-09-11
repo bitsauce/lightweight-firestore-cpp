@@ -79,15 +79,27 @@ Firestore::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
 }
 
 void Firestore::Stub::experimental_async::GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDocument_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDocument_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDocument_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::AsyncGetDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_GetDocument_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_GetDocument_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::PrepareAsyncGetDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_GetDocument_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_GetDocument_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest& request, ::google::firestore::v1::ListDocumentsResponse* response) {
@@ -95,15 +107,27 @@ void Firestore::Stub::experimental_async::GetDocument(::grpc::ClientContext* con
 }
 
 void Firestore::Stub::experimental_async::ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListDocuments_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListDocuments_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListDocuments_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListDocuments_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListDocuments_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::ListDocumentsResponse>* Firestore::Stub::AsyncListDocumentsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_ListDocuments_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_ListDocuments_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::ListDocumentsResponse>* Firestore::Stub::PrepareAsyncListDocumentsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_ListDocuments_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_ListDocuments_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest& request, ::google::firestore::v1::Document* response) {
@@ -111,15 +135,27 @@ void Firestore::Stub::experimental_async::ListDocuments(::grpc::ClientContext* c
 }
 
 void Firestore::Stub::experimental_async::CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateDocument_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateDocument_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateDocument_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::AsyncCreateDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_CreateDocument_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_CreateDocument_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::PrepareAsyncCreateDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_CreateDocument_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_CreateDocument_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest& request, ::google::firestore::v1::Document* response) {
@@ -127,15 +163,27 @@ void Firestore::Stub::experimental_async::CreateDocument(::grpc::ClientContext* 
 }
 
 void Firestore::Stub::experimental_async::UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateDocument_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateDocument_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateDocument_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::AsyncUpdateDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_UpdateDocument_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_UpdateDocument_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::Document>* Firestore::Stub::PrepareAsyncUpdateDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_UpdateDocument_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::Document>::Create(channel_.get(), cq, rpcmethod_UpdateDocument_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest& request, ::google::protobuf::Empty* response) {
@@ -143,31 +191,43 @@ void Firestore::Stub::experimental_async::UpdateDocument(::grpc::ClientContext* 
 }
 
 void Firestore::Stub::experimental_async::DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteDocument_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteDocument_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteDocument_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteDocument_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* Firestore::Stub::AsyncDeleteDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_DeleteDocument_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_DeleteDocument_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* Firestore::Stub::PrepareAsyncDeleteDocumentRaw(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_DeleteDocument_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_DeleteDocument_, context, request, false);
 }
 
 ::grpc::ClientReader< ::google::firestore::v1::BatchGetDocumentsResponse>* Firestore::Stub::BatchGetDocumentsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::BatchGetDocumentsRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), rpcmethod_BatchGetDocuments_, context, request);
+  return ::grpc_impl::internal::ClientReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), rpcmethod_BatchGetDocuments_, context, request);
 }
 
 void Firestore::Stub::experimental_async::BatchGetDocuments(::grpc::ClientContext* context, ::google::firestore::v1::BatchGetDocumentsRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::BatchGetDocumentsResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_BatchGetDocuments_, context, request, reactor);
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_BatchGetDocuments_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::google::firestore::v1::BatchGetDocumentsResponse>* Firestore::Stub::AsyncBatchGetDocumentsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::BatchGetDocumentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_BatchGetDocuments_, context, request, true, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_BatchGetDocuments_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::google::firestore::v1::BatchGetDocumentsResponse>* Firestore::Stub::PrepareAsyncBatchGetDocumentsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::BatchGetDocumentsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_BatchGetDocuments_, context, request, false, nullptr);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::google::firestore::v1::BatchGetDocumentsResponse>::Create(channel_.get(), cq, rpcmethod_BatchGetDocuments_, context, request, false, nullptr);
 }
 
 ::grpc::Status Firestore::Stub::BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest& request, ::google::firestore::v1::BeginTransactionResponse* response) {
@@ -175,15 +235,27 @@ void Firestore::Stub::experimental_async::BatchGetDocuments(::grpc::ClientContex
 }
 
 void Firestore::Stub::experimental_async::BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BeginTransaction_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BeginTransaction_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BeginTransaction_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BeginTransaction_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BeginTransaction_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::BeginTransactionResponse>* Firestore::Stub::AsyncBeginTransactionRaw(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::BeginTransactionResponse>::Create(channel_.get(), cq, rpcmethod_BeginTransaction_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::BeginTransactionResponse>::Create(channel_.get(), cq, rpcmethod_BeginTransaction_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::BeginTransactionResponse>* Firestore::Stub::PrepareAsyncBeginTransactionRaw(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::BeginTransactionResponse>::Create(channel_.get(), cq, rpcmethod_BeginTransaction_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::BeginTransactionResponse>::Create(channel_.get(), cq, rpcmethod_BeginTransaction_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest& request, ::google::firestore::v1::CommitResponse* response) {
@@ -191,15 +263,27 @@ void Firestore::Stub::experimental_async::BeginTransaction(::grpc::ClientContext
 }
 
 void Firestore::Stub::experimental_async::Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Commit_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Commit_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Commit_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Commit_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Commit_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::CommitResponse>* Firestore::Stub::AsyncCommitRaw(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::CommitResponse>::Create(channel_.get(), cq, rpcmethod_Commit_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::CommitResponse>::Create(channel_.get(), cq, rpcmethod_Commit_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::CommitResponse>* Firestore::Stub::PrepareAsyncCommitRaw(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::CommitResponse>::Create(channel_.get(), cq, rpcmethod_Commit_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::CommitResponse>::Create(channel_.get(), cq, rpcmethod_Commit_, context, request, false);
 }
 
 ::grpc::Status Firestore::Stub::Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest& request, ::google::protobuf::Empty* response) {
@@ -207,63 +291,75 @@ void Firestore::Stub::experimental_async::Commit(::grpc::ClientContext* context,
 }
 
 void Firestore::Stub::experimental_async::Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Rollback_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Rollback_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Rollback_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Rollback_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Rollback_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* Firestore::Stub::AsyncRollbackRaw(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_Rollback_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_Rollback_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* Firestore::Stub::PrepareAsyncRollbackRaw(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_Rollback_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_Rollback_, context, request, false);
 }
 
 ::grpc::ClientReader< ::google::firestore::v1::RunQueryResponse>* Firestore::Stub::RunQueryRaw(::grpc::ClientContext* context, const ::google::firestore::v1::RunQueryRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), rpcmethod_RunQuery_, context, request);
+  return ::grpc_impl::internal::ClientReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), rpcmethod_RunQuery_, context, request);
 }
 
 void Firestore::Stub::experimental_async::RunQuery(::grpc::ClientContext* context, ::google::firestore::v1::RunQueryRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::RunQueryResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_RunQuery_, context, request, reactor);
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_RunQuery_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::google::firestore::v1::RunQueryResponse>* Firestore::Stub::AsyncRunQueryRaw(::grpc::ClientContext* context, const ::google::firestore::v1::RunQueryRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), cq, rpcmethod_RunQuery_, context, request, true, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), cq, rpcmethod_RunQuery_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::google::firestore::v1::RunQueryResponse>* Firestore::Stub::PrepareAsyncRunQueryRaw(::grpc::ClientContext* context, const ::google::firestore::v1::RunQueryRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), cq, rpcmethod_RunQuery_, context, request, false, nullptr);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::google::firestore::v1::RunQueryResponse>::Create(channel_.get(), cq, rpcmethod_RunQuery_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReaderWriter< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>* Firestore::Stub::WriteRaw(::grpc::ClientContext* context) {
-  return ::grpc::internal::ClientReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), rpcmethod_Write_, context);
+  return ::grpc_impl::internal::ClientReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), rpcmethod_Write_, context);
 }
 
 void Firestore::Stub::experimental_async::Write(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::google::firestore::v1::WriteRequest,::google::firestore::v1::WriteResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderWriterFactory< ::google::firestore::v1::WriteRequest,::google::firestore::v1::WriteResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_Write_, context, reactor);
+  ::grpc_impl::internal::ClientCallbackReaderWriterFactory< ::google::firestore::v1::WriteRequest,::google::firestore::v1::WriteResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_Write_, context, reactor);
 }
 
 ::grpc::ClientAsyncReaderWriter< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>* Firestore::Stub::AsyncWriteRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), cq, rpcmethod_Write_, context, true, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), cq, rpcmethod_Write_, context, true, tag);
 }
 
 ::grpc::ClientAsyncReaderWriter< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>* Firestore::Stub::PrepareAsyncWriteRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), cq, rpcmethod_Write_, context, false, nullptr);
+  return ::grpc_impl::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>::Create(channel_.get(), cq, rpcmethod_Write_, context, false, nullptr);
 }
 
 ::grpc::ClientReaderWriter< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>* Firestore::Stub::ListenRaw(::grpc::ClientContext* context) {
-  return ::grpc::internal::ClientReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), rpcmethod_Listen_, context);
+  return ::grpc_impl::internal::ClientReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), rpcmethod_Listen_, context);
 }
 
 void Firestore::Stub::experimental_async::Listen(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::google::firestore::v1::ListenRequest,::google::firestore::v1::ListenResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderWriterFactory< ::google::firestore::v1::ListenRequest,::google::firestore::v1::ListenResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_Listen_, context, reactor);
+  ::grpc_impl::internal::ClientCallbackReaderWriterFactory< ::google::firestore::v1::ListenRequest,::google::firestore::v1::ListenResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_Listen_, context, reactor);
 }
 
 ::grpc::ClientAsyncReaderWriter< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>* Firestore::Stub::AsyncListenRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), cq, rpcmethod_Listen_, context, true, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), cq, rpcmethod_Listen_, context, true, tag);
 }
 
 ::grpc::ClientAsyncReaderWriter< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>* Firestore::Stub::PrepareAsyncListenRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), cq, rpcmethod_Listen_, context, false, nullptr);
+  return ::grpc_impl::internal::ClientAsyncReaderWriterFactory< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>::Create(channel_.get(), cq, rpcmethod_Listen_, context, false, nullptr);
 }
 
 ::grpc::Status Firestore::Stub::ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest& request, ::google::firestore::v1::ListCollectionIdsResponse* response) {
@@ -271,15 +367,27 @@ void Firestore::Stub::experimental_async::Listen(::grpc::ClientContext* context,
 }
 
 void Firestore::Stub::experimental_async::ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListCollectionIds_, context, request, response, std::move(f));
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListCollectionIds_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListCollectionIds_, context, request, response, std::move(f));
+}
+
+void Firestore::Stub::experimental_async::ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListCollectionIds_, context, request, response, reactor);
+}
+
+void Firestore::Stub::experimental_async::ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListCollectionIds_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::ListCollectionIdsResponse>* Firestore::Stub::AsyncListCollectionIdsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListCollectionIdsResponse>::Create(channel_.get(), cq, rpcmethod_ListCollectionIds_, context, request, true);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListCollectionIdsResponse>::Create(channel_.get(), cq, rpcmethod_ListCollectionIds_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::firestore::v1::ListCollectionIdsResponse>* Firestore::Stub::PrepareAsyncListCollectionIdsRaw(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListCollectionIdsResponse>::Create(channel_.get(), cq, rpcmethod_ListCollectionIds_, context, request, false);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::google::firestore::v1::ListCollectionIdsResponse>::Create(channel_.get(), cq, rpcmethod_ListCollectionIds_, context, request, false);
 }
 
 Firestore::Service::Service() {

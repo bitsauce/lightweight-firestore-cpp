@@ -43,20 +43,29 @@
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
+#include <grpcpp/impl/codegen/client_context.h>
+#include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/method_handler_impl.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
 #include <grpcpp/impl/codegen/rpc_method.h>
 #include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/codegen/server_context.h>
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
-namespace grpc {
+namespace grpc_impl {
 class CompletionQueue;
-class Channel;
 class ServerCompletionQueue;
 class ServerContext;
+}  // namespace grpc_impl
+
+namespace grpc {
+namespace experimental {
+template <typename RequestT, typename ResponseT>
+class MessageAllocator;
+}  // namespace experimental
 }  // namespace grpc
 
 namespace google {
@@ -207,14 +216,29 @@ class Firestore final {
       virtual ~experimental_async_interface() {}
       // Gets a single document.
       virtual void GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Lists documents.
       virtual void ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Creates a new document.
       virtual void CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Updates or inserts a document.
       virtual void UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Deletes a document.
       virtual void DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Gets multiple documents.
       //
       // Documents returned by this method are not guaranteed to be returned in the
@@ -222,10 +246,19 @@ class Firestore final {
       virtual void BatchGetDocuments(::grpc::ClientContext* context, ::google::firestore::v1::BatchGetDocumentsRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::BatchGetDocumentsResponse>* reactor) = 0;
       // Starts a new transaction.
       virtual void BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Commits a transaction, while optionally updating documents.
       virtual void Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Rolls back a transaction.
       virtual void Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Runs a query.
       virtual void RunQuery(::grpc::ClientContext* context, ::google::firestore::v1::RunQueryRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::RunQueryResponse>* reactor) = 0;
       // Streams batches of document updates and deletes, in order.
@@ -234,6 +267,9 @@ class Firestore final {
       virtual void Listen(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::google::firestore::v1::ListenRequest,::google::firestore::v1::ListenResponse>* reactor) = 0;
       // Lists all the collection IDs underneath a document.
       virtual void ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -374,18 +410,45 @@ class Firestore final {
       public StubInterface::experimental_async_interface {
      public:
       void GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void GetDocument(::grpc::ClientContext* context, const ::google::firestore::v1::GetDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListDocuments(::grpc::ClientContext* context, const ::google::firestore::v1::ListDocumentsRequest* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ListDocuments(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListDocumentsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void CreateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::CreateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, std::function<void(::grpc::Status)>) override;
+      void UpdateDocument(::grpc::ClientContext* context, const ::google::firestore::v1::UpdateDocumentRequest* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UpdateDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::Document* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void DeleteDocument(::grpc::ClientContext* context, const ::google::firestore::v1::DeleteDocumentRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteDocument(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void BatchGetDocuments(::grpc::ClientContext* context, ::google::firestore::v1::BatchGetDocumentsRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::BatchGetDocumentsResponse>* reactor) override;
       void BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)>) override;
+      void BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, std::function<void(::grpc::Status)>) override;
+      void BeginTransaction(::grpc::ClientContext* context, const ::google::firestore::v1::BeginTransactionRequest* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void BeginTransaction(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::BeginTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)>) override;
+      void Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, std::function<void(::grpc::Status)>) override;
+      void Commit(::grpc::ClientContext* context, const ::google::firestore::v1::CommitRequest* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Commit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::CommitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void Rollback(::grpc::ClientContext* context, const ::google::firestore::v1::RollbackRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Rollback(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void RunQuery(::grpc::ClientContext* context, ::google::firestore::v1::RunQueryRequest* request, ::grpc::experimental::ClientReadReactor< ::google::firestore::v1::RunQueryResponse>* reactor) override;
       void Write(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::google::firestore::v1::WriteRequest,::google::firestore::v1::WriteResponse>* reactor) override;
       void Listen(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::google::firestore::v1::ListenRequest,::google::firestore::v1::ListenResponse>* reactor) override;
       void ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListCollectionIds(::grpc::ClientContext* context, const ::google::firestore::v1::ListCollectionIdsRequest* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ListCollectionIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::firestore::v1::ListCollectionIdsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -745,13 +808,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_GetDocument() {
       ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::GetDocumentRequest, ::google::firestore::v1::Document>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::GetDocumentRequest, ::google::firestore::v1::Document>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::GetDocumentRequest* request,
                  ::google::firestore::v1::Document* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->GetDocument(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_GetDocument(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::GetDocumentRequest, ::google::firestore::v1::Document>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::GetDocumentRequest, ::google::firestore::v1::Document>*>(
+          ::grpc::Service::experimental().GetHandler(0))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetDocument() override {
       BaseClassMustBeDerivedFromService(this);
@@ -770,13 +839,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_ListDocuments() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::ListDocumentsRequest, ::google::firestore::v1::ListDocumentsResponse>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::ListDocumentsRequest, ::google::firestore::v1::ListDocumentsResponse>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::ListDocumentsRequest* request,
                  ::google::firestore::v1::ListDocumentsResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->ListDocuments(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_ListDocuments(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::ListDocumentsRequest, ::google::firestore::v1::ListDocumentsResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::ListDocumentsRequest, ::google::firestore::v1::ListDocumentsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(1))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_ListDocuments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -795,13 +870,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_CreateDocument() {
       ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::CreateDocumentRequest, ::google::firestore::v1::Document>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::CreateDocumentRequest, ::google::firestore::v1::Document>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::CreateDocumentRequest* request,
                  ::google::firestore::v1::Document* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->CreateDocument(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_CreateDocument(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::CreateDocumentRequest, ::google::firestore::v1::Document>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::CreateDocumentRequest, ::google::firestore::v1::Document>*>(
+          ::grpc::Service::experimental().GetHandler(2))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateDocument() override {
       BaseClassMustBeDerivedFromService(this);
@@ -820,13 +901,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_UpdateDocument() {
       ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::UpdateDocumentRequest, ::google::firestore::v1::Document>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::UpdateDocumentRequest, ::google::firestore::v1::Document>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::UpdateDocumentRequest* request,
                  ::google::firestore::v1::Document* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->UpdateDocument(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_UpdateDocument(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::UpdateDocumentRequest, ::google::firestore::v1::Document>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::UpdateDocumentRequest, ::google::firestore::v1::Document>*>(
+          ::grpc::Service::experimental().GetHandler(3))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateDocument() override {
       BaseClassMustBeDerivedFromService(this);
@@ -845,13 +932,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_DeleteDocument() {
       ::grpc::Service::experimental().MarkMethodCallback(4,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::DeleteDocumentRequest, ::google::protobuf::Empty>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::DeleteDocumentRequest, ::google::protobuf::Empty>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::DeleteDocumentRequest* request,
                  ::google::protobuf::Empty* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->DeleteDocument(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_DeleteDocument(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::DeleteDocumentRequest, ::google::protobuf::Empty>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::DeleteDocumentRequest, ::google::protobuf::Empty>*>(
+          ::grpc::Service::experimental().GetHandler(4))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteDocument() override {
       BaseClassMustBeDerivedFromService(this);
@@ -870,7 +963,7 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_BatchGetDocuments() {
       ::grpc::Service::experimental().MarkMethodCallback(5,
-        new ::grpc::internal::CallbackServerStreamingHandler< ::google::firestore::v1::BatchGetDocumentsRequest, ::google::firestore::v1::BatchGetDocumentsResponse>(
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::google::firestore::v1::BatchGetDocumentsRequest, ::google::firestore::v1::BatchGetDocumentsResponse>(
           [this] { return this->BatchGetDocuments(); }));
     }
     ~ExperimentalWithCallbackMethod_BatchGetDocuments() override {
@@ -882,7 +975,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerWriteReactor< ::google::firestore::v1::BatchGetDocumentsRequest, ::google::firestore::v1::BatchGetDocumentsResponse>* BatchGetDocuments() {
-      return new ::grpc::internal::UnimplementedWriteReactor<
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
         ::google::firestore::v1::BatchGetDocumentsRequest, ::google::firestore::v1::BatchGetDocumentsResponse>;}
   };
   template <class BaseClass>
@@ -892,13 +985,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_BeginTransaction() {
       ::grpc::Service::experimental().MarkMethodCallback(6,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::BeginTransactionRequest, ::google::firestore::v1::BeginTransactionResponse>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::BeginTransactionRequest, ::google::firestore::v1::BeginTransactionResponse>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::BeginTransactionRequest* request,
                  ::google::firestore::v1::BeginTransactionResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->BeginTransaction(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_BeginTransaction(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::BeginTransactionRequest, ::google::firestore::v1::BeginTransactionResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::BeginTransactionRequest, ::google::firestore::v1::BeginTransactionResponse>*>(
+          ::grpc::Service::experimental().GetHandler(6))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_BeginTransaction() override {
       BaseClassMustBeDerivedFromService(this);
@@ -917,13 +1016,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_Commit() {
       ::grpc::Service::experimental().MarkMethodCallback(7,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::CommitRequest, ::google::firestore::v1::CommitResponse>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::CommitRequest, ::google::firestore::v1::CommitResponse>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::CommitRequest* request,
                  ::google::firestore::v1::CommitResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->Commit(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_Commit(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::CommitRequest, ::google::firestore::v1::CommitResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::CommitRequest, ::google::firestore::v1::CommitResponse>*>(
+          ::grpc::Service::experimental().GetHandler(7))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Commit() override {
       BaseClassMustBeDerivedFromService(this);
@@ -942,13 +1047,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_Rollback() {
       ::grpc::Service::experimental().MarkMethodCallback(8,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::RollbackRequest, ::google::protobuf::Empty>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::RollbackRequest, ::google::protobuf::Empty>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::RollbackRequest* request,
                  ::google::protobuf::Empty* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->Rollback(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_Rollback(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::RollbackRequest, ::google::protobuf::Empty>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::RollbackRequest, ::google::protobuf::Empty>*>(
+          ::grpc::Service::experimental().GetHandler(8))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Rollback() override {
       BaseClassMustBeDerivedFromService(this);
@@ -967,7 +1078,7 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_RunQuery() {
       ::grpc::Service::experimental().MarkMethodCallback(9,
-        new ::grpc::internal::CallbackServerStreamingHandler< ::google::firestore::v1::RunQueryRequest, ::google::firestore::v1::RunQueryResponse>(
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::google::firestore::v1::RunQueryRequest, ::google::firestore::v1::RunQueryResponse>(
           [this] { return this->RunQuery(); }));
     }
     ~ExperimentalWithCallbackMethod_RunQuery() override {
@@ -979,7 +1090,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerWriteReactor< ::google::firestore::v1::RunQueryRequest, ::google::firestore::v1::RunQueryResponse>* RunQuery() {
-      return new ::grpc::internal::UnimplementedWriteReactor<
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
         ::google::firestore::v1::RunQueryRequest, ::google::firestore::v1::RunQueryResponse>;}
   };
   template <class BaseClass>
@@ -989,7 +1100,7 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_Write() {
       ::grpc::Service::experimental().MarkMethodCallback(10,
-        new ::grpc::internal::CallbackBidiHandler< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>(
+        new ::grpc_impl::internal::CallbackBidiHandler< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>(
           [this] { return this->Write(); }));
     }
     ~ExperimentalWithCallbackMethod_Write() override {
@@ -1001,7 +1112,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerBidiReactor< ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>* Write() {
-      return new ::grpc::internal::UnimplementedBidiReactor<
+      return new ::grpc_impl::internal::UnimplementedBidiReactor<
         ::google::firestore::v1::WriteRequest, ::google::firestore::v1::WriteResponse>;}
   };
   template <class BaseClass>
@@ -1011,7 +1122,7 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_Listen() {
       ::grpc::Service::experimental().MarkMethodCallback(11,
-        new ::grpc::internal::CallbackBidiHandler< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>(
+        new ::grpc_impl::internal::CallbackBidiHandler< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>(
           [this] { return this->Listen(); }));
     }
     ~ExperimentalWithCallbackMethod_Listen() override {
@@ -1023,7 +1134,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerBidiReactor< ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>* Listen() {
-      return new ::grpc::internal::UnimplementedBidiReactor<
+      return new ::grpc_impl::internal::UnimplementedBidiReactor<
         ::google::firestore::v1::ListenRequest, ::google::firestore::v1::ListenResponse>;}
   };
   template <class BaseClass>
@@ -1033,13 +1144,19 @@ class Firestore final {
    public:
     ExperimentalWithCallbackMethod_ListCollectionIds() {
       ::grpc::Service::experimental().MarkMethodCallback(12,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::firestore::v1::ListCollectionIdsRequest, ::google::firestore::v1::ListCollectionIdsResponse>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::ListCollectionIdsRequest, ::google::firestore::v1::ListCollectionIdsResponse>(
           [this](::grpc::ServerContext* context,
                  const ::google::firestore::v1::ListCollectionIdsRequest* request,
                  ::google::firestore::v1::ListCollectionIdsResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->ListCollectionIds(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_ListCollectionIds(
+        ::grpc::experimental::MessageAllocator< ::google::firestore::v1::ListCollectionIdsRequest, ::google::firestore::v1::ListCollectionIdsResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::google::firestore::v1::ListCollectionIdsRequest, ::google::firestore::v1::ListCollectionIdsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(12))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_ListCollectionIds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1540,7 +1657,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_GetDocument() {
       ::grpc::Service::experimental().MarkMethodRawCallback(0,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1565,7 +1682,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_ListDocuments() {
       ::grpc::Service::experimental().MarkMethodRawCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1590,7 +1707,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_CreateDocument() {
       ::grpc::Service::experimental().MarkMethodRawCallback(2,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1615,7 +1732,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_UpdateDocument() {
       ::grpc::Service::experimental().MarkMethodRawCallback(3,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1640,7 +1757,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_DeleteDocument() {
       ::grpc::Service::experimental().MarkMethodRawCallback(4,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1665,7 +1782,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_BatchGetDocuments() {
       ::grpc::Service::experimental().MarkMethodRawCallback(5,
-        new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this] { return this->BatchGetDocuments(); }));
     }
     ~ExperimentalWithRawCallbackMethod_BatchGetDocuments() override {
@@ -1677,7 +1794,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* BatchGetDocuments() {
-      return new ::grpc::internal::UnimplementedWriteReactor<
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
         ::grpc::ByteBuffer, ::grpc::ByteBuffer>;}
   };
   template <class BaseClass>
@@ -1687,7 +1804,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_BeginTransaction() {
       ::grpc::Service::experimental().MarkMethodRawCallback(6,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1712,7 +1829,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_Commit() {
       ::grpc::Service::experimental().MarkMethodRawCallback(7,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1737,7 +1854,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_Rollback() {
       ::grpc::Service::experimental().MarkMethodRawCallback(8,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
@@ -1762,7 +1879,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_RunQuery() {
       ::grpc::Service::experimental().MarkMethodRawCallback(9,
-        new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this] { return this->RunQuery(); }));
     }
     ~ExperimentalWithRawCallbackMethod_RunQuery() override {
@@ -1774,7 +1891,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* RunQuery() {
-      return new ::grpc::internal::UnimplementedWriteReactor<
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
         ::grpc::ByteBuffer, ::grpc::ByteBuffer>;}
   };
   template <class BaseClass>
@@ -1784,7 +1901,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_Write() {
       ::grpc::Service::experimental().MarkMethodRawCallback(10,
-        new ::grpc::internal::CallbackBidiHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackBidiHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this] { return this->Write(); }));
     }
     ~ExperimentalWithRawCallbackMethod_Write() override {
@@ -1796,7 +1913,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerBidiReactor< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* Write() {
-      return new ::grpc::internal::UnimplementedBidiReactor<
+      return new ::grpc_impl::internal::UnimplementedBidiReactor<
         ::grpc::ByteBuffer, ::grpc::ByteBuffer>;}
   };
   template <class BaseClass>
@@ -1806,7 +1923,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_Listen() {
       ::grpc::Service::experimental().MarkMethodRawCallback(11,
-        new ::grpc::internal::CallbackBidiHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackBidiHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this] { return this->Listen(); }));
     }
     ~ExperimentalWithRawCallbackMethod_Listen() override {
@@ -1818,7 +1935,7 @@ class Firestore final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::experimental::ServerBidiReactor< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* Listen() {
-      return new ::grpc::internal::UnimplementedBidiReactor<
+      return new ::grpc_impl::internal::UnimplementedBidiReactor<
         ::grpc::ByteBuffer, ::grpc::ByteBuffer>;}
   };
   template <class BaseClass>
@@ -1828,7 +1945,7 @@ class Firestore final {
    public:
     ExperimentalWithRawCallbackMethod_ListCollectionIds() {
       ::grpc::Service::experimental().MarkMethodRawCallback(12,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,

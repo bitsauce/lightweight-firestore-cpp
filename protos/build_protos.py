@@ -21,10 +21,12 @@ from __future__ import print_function
 python build_protos.py `
  	--protos_dir protos/ `
  	--output_dir ./ `
- 	--protoc $env:VCPKG_ROOT/installed/x64-windows-v140/tools/protobuf/protoc.exe `
-    --grpc_cpp_plugin $env:VCPKG_ROOT/installed/x64-windows-v140/tools/grpc/grpc_cpp_plugin.exe `
+ 	--protoc $env:VCPKG_ROOT/installed/x64-windows/tools/protobuf/protoc.exe `
+    --grpc_cpp_plugin $env:VCPKG_ROOT/installed/x64-windows/tools/grpc/grpc_cpp_plugin.exe `
  	-I protos/ `
- 	-I $env:VCPKG_ROOT/installed/x64-windows-v140/include
+ 	-I $env:VCPKG_ROOT/installed/x64-windows/include
+
+Where x64-windows is the vcpkg triplet.
 """
 
 """Generates and massages protocol buffer outputs.

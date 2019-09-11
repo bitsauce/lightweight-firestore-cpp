@@ -113,6 +113,7 @@ private:
 	const std::string project_id;
 	const std::string database_id;
 	const std::string database_base_path;
+	bool do_grpc_shutdown;
 
 	std::unique_ptr<google::firestore::v1::Firestore::Stub> stub;
 	std::shared_ptr<grpc::ChannelCredentials> credentials;

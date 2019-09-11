@@ -9,10 +9,10 @@ The project includes a Firestore.sln file that can be compiled with Visual Studi
 To set up the dependencies, use the following vcpkg command:
 
 ```
-.\vcpkg install google-cloud-cpp:x64-windows-v140
+.\vcpkg install google-cloud-cpp:x64-windows
 ```
 
-(we have used a custom x64-windows-v140 triplet, however you can select any triplet of your choice.)
+(we have specified the x64-windows triplet here, however you can select any triplet of your choice.)
 
 This will download and compile gRPC, OpenSSL, and other dependencies we need.
 
@@ -22,7 +22,7 @@ the triplet you used when installing the dependencies:
 ```
 <PropertyGroup Label="Globals">
     ...
-    <VcpkgTriplet>x64-windows-v140</VcpkgTriplet> // enter your triplet here
+    <VcpkgTriplet>x64-windows</VcpkgTriplet> // enter your triplet here
 </PropertyGroup>
 ```
 
@@ -34,7 +34,7 @@ Then, add the following environment variables:
 - GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=[VCPCK_ROOT]\installed\x64-windows-v140\share\grpc\roots.pem
 
 Now Firestore and the Test project should compile.
-Note that in order to run the tests, you will need to copy the following .dlls from [VCPCK_ROOT]\installed\x64-windows-v140\bin:
+Note that in order to run the tests, you will need to copy the following .dlls from [VCPCK_ROOT]\installed\x64-windows\bin:
 
 - cares.dll
 - libprotobuf.dll / libprotobufd.dll
@@ -75,7 +75,7 @@ Then (for visual studio) open the .vcxproj file and find and add:
 ```
 <PropertyGroup Label="Globals">
     ...
-    <VcpkgTriplet>x64-windows-v140</VcpkgTriplet> // added
+    <VcpkgTriplet>x64-windows-v140</VcpkgTriplet> // changed
 </PropertyGroup>
 ```
 
