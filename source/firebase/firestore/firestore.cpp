@@ -137,6 +137,49 @@ bool Firestore::Unlisten(const int32_t listen_id)
 	}
 }
 
+std::shared_ptr<Transaction> Firestore::BeginTransaction()
+{
+	google::firestore::v1::BeginTransactionRequest request;
+	google::firestore::v1::BeginTransactionResponse response;
+
+	// Setup request
+	request.set_database(database_base_path);
+	
+	grpc::ClientContext client_context;
+	grpc::Status s = stub->BeginTransaction(&client_context, request, &response);
+	if(!s.ok())
+	{
+		std::cout << "Firestore::BeginTransaction(): Received ok=false" << std::endl;
+		std::cout << "Message:" << std::endl;
+		std::cout << s.error_message() << std::endl;
+		std::cout << s.error_details() << std::endl;
+		return nullptr;
+	}
+	verbose << "Firestore::BeginTransaction(): Started a transaction" << std::endl;
+	return std::shared_ptr<Transaction>(new Transaction(response.transaction(), this));
+}
+
+bool Firestore::CommitTransaction(std::shared_ptr<Transaction> transaction)
+{
+	google::firestore::v1::CommitResponse response;
+
+	// Setup commit request
+	transaction->request.set_database(database_base_path);
+
+	grpc::ClientContext client_context;
+	grpc::Status s = stub->Commit(&client_context, transaction->request, &response);
+	if(!s.ok())
+	{
+		std::cout << "Firestore::BeginTransaction(): Received ok=false" << std::endl;
+		std::cout << "Message:" << std::endl;
+		std::cout << s.error_message() << std::endl;
+		std::cout << s.error_details() << std::endl;
+		return false;
+	}
+	verbose << "Firestore::CommitTransaction(): Transaction successfully committed" << std::endl;
+	return true;
+}
+
 std::string Firestore::GetFullDocumentPath(const std::string &document_path) const
 {
 	return database_base_path + "/documents/" + document_path;
@@ -431,6 +474,55 @@ void Firestore::ListenerThread::ListenInternal() const
 		std::cout << s.error_message() << std::endl;
 		std::cout << s.error_details() << std::endl;
 	}
+}
+
+Transaction::Transaction(const std::string& transaction_id, Firestore* firestore) :
+	firestore(firestore),
+	transaction_id(transaction_id)
+{
+	request.set_allocated_transaction(new std::string(transaction_id));
+}
+
+bool Transaction::GetDocument(const std::string& document_path, Document* document_out)
+{
+	// Make sure we were provided a document object to write to
+	if(document_out == nullptr)
+	{
+		std::cerr << "Firestore::GetDocument(): No output document provided (document_out=nullptr)" << std::endl;
+		return false;
+	}
+
+	// Create a document request
+	// We will the request document with path:
+	// projects/{project_id}/databases/{database_id}/documents/{document_path}
+	google::firestore::v1::GetDocumentRequest request;
+	request.set_name(firestore->GetFullDocumentPath(document_path));
+	request.set_transaction(transaction_id);
+
+	grpc::ClientContext client_context;
+	grpc::Status s = firestore->stub->GetDocument(&client_context, request, document_out);
+	if(!s.ok())
+	{
+		std::cout << "Firestore::GetDocument(): Received ok=false" << std::endl;
+		std::cout << "Message:" << std::endl;
+		std::cout << s.error_message() << std::endl;
+		std::cout << s.error_details() << std::endl;
+		return false;
+	}
+	return true;
+}
+
+bool Transaction::UpdateDocument(const std::string& document_path, const Document& new_document)
+{
+	// Make copy of new document
+	Document* allocated_document = new Document(new_document);
+	allocated_document->set_name(firestore->GetFullDocumentPath(document_path));
+
+	// Add write command
+	google::firestore::v1::Write* write = request.add_writes();
+	write->set_allocated_update(allocated_document);
+
+	return true;
 }
 
 } // namespace firestore

@@ -28,6 +28,8 @@ typedef std::function<void(const google::firestore::v1::Document*)> ListenCallba
 typedef google::firestore::v1::Document Document;
 typedef google::firestore::v1::Value Value;
 
+class Transaction;
+
 /**
  * This file features a lightweight class that may be used to 
  * communicate with a Firestore database.
@@ -48,6 +50,7 @@ typedef google::firestore::v1::Value Value;
 
 class FIRESTORE_EXPORT Firestore
 {
+	friend class Transaction;
 public:
 	/**
 	 * Initializes a channel to communicate with a Firestore database
@@ -104,6 +107,31 @@ public:
 	bool Unlisten(const int32_t listen_id);
 
 	/**
+	 * Start a transaction in the current Firestore database.
+	 *
+	 * Use the returned Transaction object to get and update documents
+	 * in the database through this transaction.
+	 *
+	 * Remember to call Firestore::CommitTransaction to free the documents used
+	 * by this transaction to concurrent readers and to commit all the
+	 * document changes made in the transaction.
+	 *
+	 * \return A shared pointer to a Transaction object
+	 */
+	std::shared_ptr<Transaction> BeginTransaction();
+
+	/**
+	 * Commits a transaction that was started by Firestore::BeginTransaction.
+	 *
+	 * Calling Firestore::CommitTransaction will free the documents used
+	 * by this transaction to concurrent readers and to commit all the
+	 * document changes made in the transaction.
+	 *
+	 * \param A shared pointer to a Transaction object
+	 */
+	bool CommitTransaction(std::shared_ptr<Transaction> transaction);
+
+	/**
 	 * Returns a full document path:
 	 * projects/{project_id}/databases/{database_id}/documents/{document_path}
 	 */
@@ -148,8 +176,46 @@ private:
 		std::atomic<bool> listening;
 	};
 	friend class ListenerThread;
-
 	std::map<int32_t, std::shared_ptr<ListenerThread>> listener_threads;
+};
+
+/**
+ * This class lets us retrieve, create and update documents in a deterministic manner
+ */
+class FIRESTORE_EXPORT Transaction
+{
+	friend class Firestore;
+
+public:
+	/**
+	 * Retrieves the document at path 'document_path' from the current Firestore database.
+	 * Also sets up a transaction on in the Firestore database that prevents concurrent
+	 * read/writes to the same document.
+	 *
+	 * \param document_path The path of the document to update or insert
+	 * \param document_out  Output document object
+	 * \returns             True on successful document retrieval
+	 */
+	bool GetDocument(const std::string& document_path, Document* document_out);
+
+	/**
+	 * Updates or inserts a new document at path 'document_path' in the current Firestore database.
+	 * Also sets up a transaction on in the Firestore database that prevents concurrent
+	 * read/writes to the same document.
+	 *
+	 * \param document_path The path of the document to update or insert
+	 * \param new_document  Document to update or insert
+	 * \param document_out  Updated document object, as received from the database (optional)
+	 * \returns             True on successful document update
+	 */
+	bool UpdateDocument(const std::string& document_path, const Document& new_document);
+
+private:
+	Transaction(const std::string& transaction_id, Firestore* firestore);
+
+	const Firestore* const firestore;
+	const std::string transaction_id;
+	google::firestore::v1::CommitRequest request;
 };
 
 } // namespace firestore
